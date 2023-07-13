@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{421DEBF5-0515-4B9C-93E4-6481279D1B87}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>proj_Traveldate</RootNamespace>
+    <AssemblyName>proj_Traveldate</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CityList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CommentList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Companion.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanionList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmAnalysis.Designer.cs">
+      <DependentUpon>FrmAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmCompanyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmCompanyProfile.Designer.cs">
+      <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmCoupon.designer.cs">
+      <DependentUpon>FrmCoupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmCouponDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmCouponDetail.Designer.cs">
+      <DependentUpon>FrmCouponDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmHomePage.designer.cs">
+      <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmProductDetail.Designer.cs">
+      <DependentUpon>FrmProductDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmProducts.designer.cs">
+      <DependentUpon>FrmProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmTripDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyManagement\FrmTripDetail.Designer.cs">
+      <DependentUpon>FrmTripDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CountryList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CouponList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Favorite.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fieldBox\ProductBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fieldBox\ProductBox.Designer.cs">
+      <DependentUpon>ProductBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fieldBox\TripDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="fieldBox\TripDay.Designer.cs">
+      <DependentUpon>TripDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home\Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home\FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommonClass.cs" />
+    <Compile Include="Models\DateTimeManger.cs" />
+    <Compile Include="Models\FavoriteCheck.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\ProductManager.cs" />
+    <Compile Include="Models\ProductBoxManger.cs" />
+    <Compile Include="Models\ProductTagManger.cs" />
+    <Compile Include="Models\RegionManger.cs" />
+    <Compile Include="Models\TEST.cs" />
+    <Compile Include="Models\TrackBarManger.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatusList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhotoList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTagDetail.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTagList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTypeList.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Progrom\FrmProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progrom\FrmProgram.Designer.cs">
+      <DependentUpon>FrmProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Progrom\FrmTripDetials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progrom\FrmTripDetials.Designer.cs">
+      <DependentUpon>FrmTripDetials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="searchUIRev\FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchUIRev\FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchUIRev\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchUIRev\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TDModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TDModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TDModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TDModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TDModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Trip.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TripDetail.cs">
+      <DependentUpon>TDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="期中專題登入相關\EmployeesManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="期中專題登入相關\EmployeesManage.Designer.cs">
+      <DependentUpon>EmployeesManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="期中專題登入相關\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="期中專題登入相關\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="期中專題登入相關\ManufacturerLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="期中專題登入相關\ManufacturerLogin.Designer.cs">
+      <DependentUpon>ManufacturerLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="期中專題登入相關\ManufacturerRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="期中專題登入相關\ManufacturerRegister.Designer.cs">
+      <DependentUpon>ManufacturerRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="期中專題登入相關\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="期中專題登入相關\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="購物車界面\CartClass.cs" />
+    <Compile Include="購物車界面\CartFeatures\0Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="購物車界面\CartFeatures\1Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="購物車界面\CartFeatures\2Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="購物車界面\CartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="購物車界面\CartItem.Designer.cs">
+      <DependentUpon>CartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="購物車界面\FrmCartTabPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="購物車界面\FrmCartTabPage.Designer.cs">
+      <DependentUpon>FrmCartTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="金負責區-LoginPage-Member\FrmComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="金負責區-LoginPage-Member\FrmComment.Designer.cs">
+      <DependentUpon>FrmComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="金負責區-LoginPage-Member\LoginPage-Member 會員登入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="金負責區-LoginPage-Member\LoginPage-Member 會員登入.Designer.cs">
+      <DependentUpon>LoginPage-Member 會員登入.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CompanyManagement\FrmAnalysis.resx">
+      <DependentUpon>FrmAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyManagement\FrmCompanyProfile.resx">
+      <DependentUpon>FrmCompanyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyManagement\FrmCoupon.resx">
+      <DependentUpon>FrmCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyManagement\FrmCouponDetail.resx">
+      <DependentUpon>FrmCouponDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyManagement\FrmHomePage.resx">
+      <DependentUpon>FrmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyManagement\FrmProductDetail.resx">
+      <DependentUpon>FrmProductDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyManagement\FrmProducts.resx">
+      <DependentUpon>FrmProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyManagement\FrmTripDetail.resx">
+      <DependentUpon>FrmTripDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fieldBox\ProductBox.resx">
+      <DependentUpon>ProductBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fieldBox\TripDay.resx">
+      <DependentUpon>TripDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\Contact.resx">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progrom\FrmProgram.resx">
+      <DependentUpon>FrmProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progrom\FrmTripDetials.resx">
+      <DependentUpon>FrmTripDetials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="searchUIRev\FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchUIRev\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="期中專題登入相關\EmployeesManage.resx">
+      <DependentUpon>EmployeesManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="期中專題登入相關\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="期中專題登入相關\ManufacturerLogin.resx">
+      <DependentUpon>ManufacturerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="期中專題登入相關\ManufacturerRegister.resx">
+      <DependentUpon>ManufacturerRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="期中專題登入相關\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="購物車界面\CartItem.resx">
+      <DependentUpon>CartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="購物車界面\FrmCartTabPage.resx">
+      <DependentUpon>FrmCartTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="金負責區-LoginPage-Member\FrmComment.resx">
+      <DependentUpon>FrmComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="金負責區-LoginPage-Member\LoginPage-Member 會員登入.resx">
+      <DependentUpon>LoginPage-Member 會員登入.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="TDModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TDModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TDModel.edmx.diagram">
+      <DependentUpon>TDModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\dots.png" />
+    <Content Include="Resources\heart.png" />
+    <Content Include="Resources\heart_g.png" />
+    <Content Include="Resources\icon_creditcard2.jpg" />
+    <Content Include="Resources\istockphoto-1357365823-612x612.jpg" />
+    <Content Include="Resources\jkopayqrcode.png" />
+    <Content Include="Resources\jkopayqrcode2.png" />
+    <Content Include="Resources\linepay2.jpg" />
+    <Content Include="Resources\linepay23.jpg" />
+    <Content Include="Resources\star.png" />
+    <Content Include="TDModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TDModel.Context.cs</LastGenOutput>
+      <DependentUpon>TDModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="TDModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TDModel.edmx</DependentUpon>
+      <LastGenOutput>TDModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\user.png" />
+    <None Include="Resources\starRate.png" />
+    <None Include="Resources\staryellow.png" />
+    <None Include="Resources\TD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
