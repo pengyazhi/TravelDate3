@@ -13,7 +13,9 @@ namespace proj_Traveldate.Models
     {
         public TrackBarManger()
         {
-            LoadUnitPriceToTrackBar();
+            //取得全部商品的價格
+            IQueryable<decimal?> selectPrice = CommonClass.dbContext.Trips.Where(n => CommonClass.confirmedID.Contains(n.ProductID)).Select(n => n.UnitPrice);
+            LoadUnitPriceToTrackBar(selectPrice);
         }
 
         public TrackBar tbSmall = new TrackBar();
@@ -23,11 +25,11 @@ namespace proj_Traveldate.Models
         public decimal? UnitPriceMax { get; set; }
         public decimal? UnitPriceMin { get; set; }
 
-        public void LoadUnitPriceToTrackBar()
+        public void LoadUnitPriceToTrackBar(IQueryable<decimal?> selectPrice)
         {
             //取得全部商品的價格
-            var selectPrice = CommonClass.dbContext.Trips.Where(n => CommonClass.confirmedID.Contains(n.ProductID)).Select(n => n.UnitPrice);
-           // var selectPrice = ProductBoxManger.nowProductBoxes.AsEnumerable().Select(p => p._productPrice);
+            //var selectPrice = CommonClass.dbContext.Trips.Where(n => CommonClass.confirmedID.Contains(n.ProductID)).Select(n => n.UnitPrice);
+            //var selectPrice = ProductBoxManger.nowProductBoxes.AsEnumerable().Select(p => p._productPrice);
             //取單價最高/最低
             UnitPriceMax = selectPrice.Max();
             UnitPriceMin = selectPrice.Min();

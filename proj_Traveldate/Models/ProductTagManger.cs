@@ -79,8 +79,14 @@ namespace proj_Traveldate.Models
             {
                 treeView.AfterCheck += TreeView_AfterCheck;
             }
+            UpdateTrackValue();
         }
 
+        private void UpdateTrackValue()
+        {
+            IEnumerable<int> selectPrice = ProductBoxManger.nowProductBoxes.AsEnumerable().Select(p => p._productPrice);
+            new TrackBarManger().LoadUnitPriceToTrackBar((IQueryable<decimal?>)selectPrice);
+        }
 
         void Update(List<TreeView> trees)
         {
